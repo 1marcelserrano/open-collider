@@ -69,7 +69,7 @@ A skill is a set of instructions that teaches Claude to do a task a certain way.
 
 1. [Download open-collider.skill](https://github.com/1marcelserrano/open-collider/releases/latest/download/open-collider.skill).
 2. Open Claude and go to Customize, the menu where your skills live.
-3. Click + Add and choose Upload a skill. Pick the file you downloaded. If Claude refuses it, rename the ending from `.skill` to `.zip` and upload again.
+3. Click + Add and choose Upload a skill. Pick the file you downloaded. If Claude refuses it because of the format, rename the ending from `.skill` to `.zip` and upload again. If the message is about the content, renaming will not help, and the message tells you what to fix.
 4. Check that the toggle next to open-collider is on.
 5. Open a new conversation and write: "open collider".
 
