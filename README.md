@@ -6,7 +6,7 @@
 
 A Claude skill that generates genuinely non-obvious ideas by colliding structurally distant domains — then curating the noise down to a ranked pool. One markdown file. No dependencies, no server, no external state.
 
-[Install](#install) · [How it works](#how-it-works) · [When to use](#when-to-use) · [Worked example](#worked-example) · [FAQ](#faq)
+[Install](#install) · [Página em português](https://mscreative.systems/arsenal/open-collider) · [How it works](#how-it-works) · [When to use](#when-to-use) · [Worked example](#worked-example) · [FAQ](#faq)
 
 ---
 
@@ -63,21 +63,33 @@ Full run — domain bank of six, an isolated collision, a cross-collision, the r
 
 ## Install
 
-```bash
-# Via skills CLI (recommended)
-npx skills add 1marcelserrano/open-collider
+A skill is a set of instructions that teaches Claude to do a task a certain way. You install it once and then call it by name. It takes a few minutes and needs no terminal. A Portuguese walkthrough lives at [mscreative.systems/arsenal/open-collider](https://mscreative.systems/arsenal/open-collider).
 
-# Or manually — back up first if the folder already exists:
-# mv ~/.claude/skills/open-collider ~/.claude/skills/open-collider.backup
+**What you need:** a Claude account and, in Claude's settings, the "Code execution and file creation" option turned on. Claude asks for it before it accepts an uploaded skill. If your Claude belongs to a company, the admin may need to allow skill uploads.
+
+1. [Download open-collider.skill](https://github.com/1marcelserrano/open-collider/releases/latest/download/open-collider.skill).
+2. Open Claude and go to Customize, the menu where your skills live.
+3. Click + Add and choose Upload a skill. Pick the file you downloaded. If Claude refuses it because of the format, rename the ending from `.skill` to `.zip` and upload again. If the message is about the content, renaming will not help, and the message tells you what to fix.
+4. Check that the toggle next to open-collider is on.
+5. Open a new conversation and write: "open collider".
+
+**What was tested:** the author uploaded a `.skill` file through this path with two other skills of his (Fila de Prioridades and Prompt Chain). Claude accepted the file as is, without renaming, and the skill came on already enabled. That test is still missing for `open-collider.skill` itself, and nobody other than the author has followed these steps alone yet.
+
+The skill instructions are in English. Write your request in your own language. A reply in Portuguese to a Portuguese request has not been checked in a test yet.
+
+<details>
+<summary>For people who already use the terminal</summary>
+
+```bash
 git clone https://github.com/1marcelserrano/open-collider.git
 cp -r open-collider/skills/open-collider ~/.claude/skills/
 ```
 
-**Verify:** open a new Claude session and run `/skills` (or ask "what skills do you have?"). `open-collider` should be listed. If it isn't, check that `~/.claude/skills/open-collider/SKILL.md` exists and restart the session.
-
-**No terminal?** Download [`open-collider.skill`](./open-collider.skill) and upload it in Claude (Cowork / claude.ai → Skills).
+Or with the skills CLI: `npx skills add 1marcelserrano/open-collider`. To check, open a new session and run `/skills`. `open-collider` should be listed. If you already have the folder, back it up first: `mv ~/.claude/skills/open-collider ~/.claude/skills/open-collider.backup`.
 
 **Update:** `git pull` in the cloned repo, then re-copy. Changes are logged in [CHANGELOG.md](./CHANGELOG.md).
+
+</details>
 
 ## How to run it
 
@@ -127,6 +139,12 @@ Any chat-based Claude interface — Claude Code (CLI/desktop), claude.ai, Claude
 
 **Will it be maintained?**
 Yes. Versions follow [CHANGELOG.md](./CHANGELOG.md). Update with `git pull` or re-run `npx skills add`.
+
+## Free community
+
+This skill is a gift. If you want to build skills like this one and talk to people doing the same, join the free community (in Portuguese):
+
+**[Join the community on Skool](https://www.skool.com/marcel-1662/about)**
 
 ## About the author
 
